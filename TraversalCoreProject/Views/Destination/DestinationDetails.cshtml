@@ -153,7 +153,7 @@
                     <!--//author-card-->
 
 
-                    <vc:_comment-list-partial/>
+                    @await Component.InvokeAsync("_CommentListPartial", new {id = ViewBag.i }) 
 
                     <vc:_add-comment-partial/>
                 </div>
