@@ -155,7 +155,7 @@
 
                     @await Component.InvokeAsync("_CommentListPartial", new {id = ViewBag.i }) 
 
-                    <vc:_add-comment-partial/>
+                    <partial name="~/Views/Comment/AddComment.cshtml" />
                 </div>
             </div>
             <!--//blog-post-->
