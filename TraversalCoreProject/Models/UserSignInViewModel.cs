@@ -4,7 +4,7 @@ namespace TraversalCoreProject.Models
 {
     public class UserSignInViewModel
     {
-        [Required(ErrorMessage = "Email alanı boş geçilemez")]
+        [Required(ErrorMessage = "Kullanıcı adı boş geçilemez")]
         public string? Username { get; set; }
 
         [Required(ErrorMessage = "Şifre alanı boş geçilemez")]
