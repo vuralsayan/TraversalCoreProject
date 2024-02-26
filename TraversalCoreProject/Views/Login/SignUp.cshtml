@@ -1,4 +1,4 @@
-﻿
+﻿@model TraversalCoreProject.Models.UserRegisterViewModel
 @{
     Layout = null;
 }
@@ -8,9 +8,9 @@
 <head>
     <title>Traversal Kullanıcı Kayıt Ekranı</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">   
-    <link rel="icon" type="image/png" href="~/Login_v1/images/icons/favicon.ico" />   
-    <link rel="stylesheet" type="text/css" href="~/Login_v1/vendor/bootstrap/css/bootstrap.min.css">    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="~/Login_v1/images/icons/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="~/Login_v1/vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="~/Login_v1/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="~/Login_v1/vendor/animate/animate.css">
     <link rel="stylesheet" type="text/css" href="~/Login_v1/vendor/css-hamburgers/hamburgers.min.css">
@@ -27,57 +27,75 @@
                     <img src="~/Login_v1/images/img-01.png" alt="IMG">
                 </div>
 
-                <form class="login100-form validate-form">
+                <form method="post" class="login100-form validate-form">
                     <span class="login100-form-title">
                         Yeni Hesap Oluşturun
                     </span>
 
-                    <div class="wrap-input100 validate-input" data-validate="">
-                        <input class="input100" type="text" placeholder="Adınız">
+                    <div class="wrap-input100">
+                        <input class="input100" type="text" placeholder="Adınız" asp-for="Name">
+                        <span asp-validation-for="Name" class="text-danger"></span>
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
                             <i class="fa fa-user" aria-hidden="true"></i>
                         </span>
                     </div>
 
-                    <div class="wrap-input100 validate-input" data-validate="asdasd">
-                        <input class="input100" type="text" placeholder="Soyadınız">
+                    <div class="wrap-input100">
+                        <input class="input100" type="text" placeholder="Soyadınız" asp-for="Surname">
+                        <span asp-validation-for="Surname" class="text-danger"></span>
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
                             <i class="fa fa-user" aria-hidden="true"></i>
                         </span>
                     </div>
 
-                    <div class="wrap-input100 validate-input" data-validate="">
-                        <input class="input100" type="text" placeholder="Email Adresiniz">
+                    <div class="wrap-input100">
+                        <input class="input100" type="email" placeholder="Mail Adresiniz" asp-for="Mail">
+                        <span asp-validation-for="Mail" class="text-danger"></span>
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
                             <i class="fa fa-envelope" aria-hidden="true"></i>
                         </span>
                     </div>
 
-                    <div class="wrap-input100 validate-input" data-validate="">
-                        <input class="input100" type="tel" placeholder="Telefon Numaranız">
+                    <div class="wrap-input100">
+                        <input class="input100" type="text" placeholder="Kullanıcı Adınız" asp-for="Username">
+                        <span asp-validation-for="Username" class="text-danger"></span>
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-id-card-o" aria-hidden="true"></i>
+                        </span>
+                    </div>
+
+                    <div class="wrap-input100">
+                        <input class="input100" type="text" placeholder="Telefon Numarası" asp-for="PhoneNumber">
+                        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
                             <i class="fa fa-phone" aria-hidden="true"></i>
                         </span>
                     </div>
 
-                    <div class="wrap-input100 validate-input" data-validate="">
-                        <input class="input100" type="password" placeholder="Şifreniz">
+                    <div class="wrap-input100 ">
+                        <input class="input100" type="password" placeholder="Şifreniz" asp-for="Password">
+                        <span asp-validation-for="Password" class="text-danger"></span>
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
                             <i class="fa fa-lock" aria-hidden="true"></i>
                         </span>
                     </div>
 
-                    <div class="wrap-input100 validate-input" data-validate="">
-                        <input class="input100" type="password" placeholder="Şifre Tekrar">
+                    <div class="wrap-input100">
+                        <input class="input100" type="password" placeholder="Şifre Tekrar" asp-for="ConfirmPassword">
+                        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
                             <i class="fa fa-lock" aria-hidden="true"></i>
                         </span>
+                    </div>
+                    <div class="text-danger" asp-validation-summary="ModelOnly">
+
                     </div>
 
                     <div class="container-login100-form-btn">
@@ -116,9 +134,9 @@
     <!--===============================================================================================-->
     <script src="~/Login_v1/vendor/tilt/tilt.jquery.min.js"></script>
     <script>
-		$('.js-tilt').tilt({
-			scale: 1.1
-		})
+        $('.js-tilt').tilt({
+            scale: 1.1
+        })
     </script>
     <!--===============================================================================================-->
     <script src="~/Login_v1/js/main.js"></script>
