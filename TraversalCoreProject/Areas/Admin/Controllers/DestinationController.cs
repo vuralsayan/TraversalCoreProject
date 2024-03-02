@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace TraversalCoreProject.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Route("Admin/[controller]/[action]/{id?}")]
     public class DestinationController : Controller
     {
         DestinationManager destinationManager = new DestinationManager(new EfDestinationDal());
@@ -47,7 +48,7 @@ namespace TraversalCoreProject.Areas.Admin.Controllers
         public IActionResult UpdateDestination(Destination destination)
         {
             destinationManager.TUpdate(destination);
-            return RedirectToAction("Index", "Destination", new { area = "Admin" });
+            return RedirectToAction("Index", "Destination");
         }
     }
 }
